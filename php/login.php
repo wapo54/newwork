@@ -14,7 +14,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	if($result['username']) {
 		  if(password_verify($_POST['password'], $result['password'])){
                             // Password is correct, so start a new session
-                            
+                            session_start();
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
                             $_SESSION['id'] = $result['id'];
